@@ -15,5 +15,9 @@ def index():
     print(tourpackage['name'])
   return render_template('index.html', tourpackages=tourpackages)
 
+@app.route('/philippine-tours-2019-2020/davao-tourpackages/<slug>')
+def tourpackage():
+  return "hello"
+
 if __name__ == '__main__':
   app.run(debug=True)
