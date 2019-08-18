@@ -1,5 +1,48 @@
 {% extends 'base.html' %}
  
 {% block container %}
-  <h1 class="lead">Hello World</h1>
+  <span class="d-block mt-3">
+    <div class="responsive-widths">
+      {# <video 
+        loop="loop" 
+        style="width:100%; height: auto" 
+        autoplay
+        playsinline
+        poster="https://res.cloudinary.com/etours-davao-inc/image/upload/v1564466982/etours-davao-kadayawan-banner-2019.jpg"
+        >
+        <source src="https://res.cloudinary.com/etours-davao/video/upload/v1564969038/etours-davao-kadayawan-2019-c_scale_vc_auto_w_992_kly8v3.mp4" type="video/mp4" />
+          Your browser does not support playing video content.
+      </video> #}
+      <section>
+        <h2 class="styled-h2">Tour Packages</h2>
+        <div id="tourpackages-wrapper">
+          {% for tourpackage in tourpackages %}
+            <div class="relative">
+              <div class="d-block bg-white">
+                <div class="ribbon">
+                  <span>{{tourpackage.duration_text}}</span>
+                </div>
+                <img 
+                  src="https://res.cloudinary.com/etours-davao/image/upload/c_scale,w_488,fl_progressive/v1564818805/{{tourpackage.photo}}" 
+                  alt="davao philippines"
+                  class="img-fluid" />
+                <div class="p-2 d-flex flex-wrap align-content-between" style="min-height: 115px">
+                  <h3 class="tp-name">{{tourpackage.name}}</h3>
+                  <div class="tp-pricewrapper">
+                    <div>
+                      <p class="p-0 m-0"><small>Price starts from</small></p>
+                      <span class="tp-pricestarts">{{tourpackage.price_starts}}</span>
+                    </div>
+                    <div>
+                      <a href="" class="btn btn-info align-right btn-sm">View details</a>
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </span>
 {% endblock %}
