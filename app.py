@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 import json
 
@@ -13,7 +13,7 @@ with open(config.dataSource) as dataSource:
 def index():
   for tourpackage in tourpackages:
     print(tourpackage['name'])
-  return str(tourpackage)
+  return render_template('index.html', tourpackages=tourpackages)
 
 if __name__ == '__main__':
-  app.run(debug=True)  
+  app.run(debug=True)
