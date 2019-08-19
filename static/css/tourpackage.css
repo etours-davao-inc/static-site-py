@@ -1,0 +1,72 @@
+#tourpackage-wrapper {
+  margin: 10px auto;
+}
+
+.tourpackage_info_wrapper {
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+#tourpackage_banner {
+  width:100%;
+  border-radius: 3px;
+}
+
+#tourpackage_title {
+  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  color: #D35400;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+
+#tourpackage_code_duration {
+  font-size: 1rem;
+}
+
+#tourpackage_description {
+  font-size: 1rem;
+  padding: 1rem 0;
+}
+
+#tourpackage_info_wrapper  {
+  font-size: 1rem;
+}
+
+#tourpackage_info_wrapper h3 {
+  color: #d35400;
+  font-size: 1em;
+}
+
+#tourpackage_info_wrapper li {
+  margin-bottom: .2em;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  #tourpackage-wrapper {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  #tourpackage-wrapper {
+    margin: 15px auto;
+    max-width: 95%;
+    display: grid;
+    grid-template-columns: minmax(440px, 800px) minmax(320px, 350px);
+    grid-gap: 5px 5px;
+    justify-content: center;
+  }  
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+}

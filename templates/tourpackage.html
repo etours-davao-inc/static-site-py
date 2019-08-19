@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block stylesheets %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/tourpackage.css')}}" />
+{% endblock %}
+{% block container %}
+  <div id="tourpackage-wrapper">
+      <div class="tourpackage_info_wrapper">
+       <h1 id="tourpackage_title" class="m-0 pb-0">{{tourpackage.name}}</h1>
+       <span><small>Last Updated: {{today}}</small></span>
+       <p id="tourpackage_code_duration" class="mt-3">{{tourpackage.duration_text}}</p>
+       <p id="tourpackage_description">{{tourpackage.description}}</p>
+       <div id="tourpackage_info_wrapper">
+        {{tourpackage.info | safe }}
+       </div>
+       <h3 style="color: #d35400; font-size: 1em">Terms and conditions</h3>
+       <div id="tourpackage_info_wrapper">
+        {{tourpackage.terms | safe }}
+       </div>
+       <h3 style="color: #d35400; font-size: 1em">Responsibilities</h3>
+       <div id="tourpackage_info_wrapper">
+        {{tourpackage.responsibilites | safe }}
+       </div>
+     </div>
+    <div>No Script</div>
+  </div>
+{% endblock %}
