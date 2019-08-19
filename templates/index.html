@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
- 
+{% block stylesheets %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/tourpackages.css')}}" />
+{% endblock %}
 {% block container %}
   <span class="d-block mt-3">
     <div class="responsive-widths">
