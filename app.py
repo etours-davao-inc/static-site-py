@@ -35,6 +35,9 @@ def tourpackages():
 def companyprofile():
   return render_template('company-profile.html')
 
+@app.route('/contact-us')
+def contactus():
+  return render_template('contact-us.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
