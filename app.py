@@ -11,13 +11,12 @@ with open(config.dataSource) as dataSource:
 
 @app.route('/')
 def index():
-  for tourpackage in tourpackages:
-    print(tourpackage['name'])
-  return render_template('index.html', tourpackages=tourpackages)
+  sortedTourpackages = sorted(tourpackages, key=lambda k: k['total_hours'])  
+  return render_template('index.html', tourpackages=sortedTourpackages)
 
 @app.route('/philippine-tours-2019-2020/davao-tourpackages/<slug>')
-def tourpackage():
-  return "hello"
+def tourpackage(slug):
+  return slug
 
 if __name__ == '__main__':
   app.run(debug=True)
