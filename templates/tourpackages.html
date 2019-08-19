@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block stylesheets %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{url_for('static', filename='css/tourpackages-page.css')}}" />
+{% endblock %}
+{% block container %}
+  <section id="hassle-free-banner">
+    <img src="https://res.cloudinary.com/etours-davao-inc/image/upload/w_600/v1489730145/etours-davao-philippines-hassle-free-travel_lqsg2k.png" />
+  </section>
+  <div class="responsive-widths">
+    <h1>Davao Tourpackages</h1>
+    <p>{{found}} tourpackages found</p>
+    {% for tourpackage in tourpackages %}
+      <div class="tourpackage d-flex flex-row mb-1 p-2 rounded bg-white">
+        <div class="p-2">
+          <img class="tourpackage_thumbnail rounded" crop="fill" src="https://res.cloudinary.com/etours-davao/image/upload/c_thumb,w_125,h_125,fl_progressive/v1564818805/{{tourpackage.photo}}" />
+        </div>
+        <div class="tourpackage_info_wrapper">
+          <h3>{{tourpackage.name}}</h3>
+          <p class="duration">{{tourpackage.duration_text}}</p>
+          <p class="description">{{tourpackage.description}}</p>
+          <div class="footerwrapper">
+            <a href="{{url_for('tourpackage_page', slug=tourpackage.slug)}}" class="btn btn-warning">View details</a>
+            <span class="pricewrapper">
+              <span class="pricestarts">Price starts from</span>
+              <p class="price">{{tourpackage.price_starts}}</p>
+            </span>
+          </div>
+        </div>
+      </div>    
+    {% endfor %}
+  </div>
+{% endblock %}
