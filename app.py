@@ -20,10 +20,14 @@ def index():
   return render_template('index.html', tourpackages=sortedTourpackages)
 
 @app.route('/philippine-tours-2019-2020/davao-tourpackages/<slug>')
-def tourpackage(slug):
+def tourpackage_page(slug):
   tourpackage = tp[slug]
   today = datetime.now().strftime('%m/%d/%Y')
   return render_template('tourpackage.html', tourpackage=tourpackage, today=today)
+
+@app.errorhandler(404)
+def page_not_found(e):
+  return render_template('404.html') 
 
 if __name__ == '__main__':
   app.run(debug=True)
