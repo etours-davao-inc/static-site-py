@@ -39,6 +39,10 @@ def companyprofile():
 def contactus():
   return render_template('contact-us.html')
 
+@app.route('/privacy-policy')
+def privacypolicy():
+  return render_template('privacy-policy.html')  
+
 @app.errorhandler(404)
 def page_not_found(e):
   return render_template('404.html') 
