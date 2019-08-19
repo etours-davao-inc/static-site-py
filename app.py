@@ -10,6 +10,9 @@ app = Flask(__name__)
 with open(config.dataSource) as dataSource:
   tourpackages = json.load(dataSource)
 
+with open(config.dataSource2) as indexData:
+  indexData = json.load(indexData)
+
 tp = {}
 for tourpackage in tourpackages:
   tp[tourpackage['slug']] = tourpackage
@@ -18,7 +21,7 @@ sortedTourpackages = sorted(tourpackages, key=lambda k: k['total_hours'])
 
 @app.route('/')
 def index():
-  return render_template('index.html', tourpackages=sortedTourpackages)
+  return render_template('index.html', tourpackages=sortedTourpackages, indexData=indexData)
 
 @app.route('/philippine-tours-2019-2020/davao-tourpackages/<slug>')
 def tourpackage_page(slug):

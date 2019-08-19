@@ -25,10 +25,10 @@
                 <div class="ribbon">
                   <span>{{tourpackage.duration_text}}</span>
                 </div>
-                <img 
+                {# <img 
                   src="https://res.cloudinary.com/etours-davao/image/upload/c_scale,w_488,fl_progressive/v1564818805/{{tourpackage.photo}}" 
                   alt="davao philippines"
-                  class="img-fluid" />
+                  class="img-fluid" /> #}
                 <div class="p-2 d-flex flex-wrap align-content-between" style="min-height: 115px">
                   <h3 class="tp-name">{{tourpackage.name}}</h3>
                   <div class="tp-pricewrapper">
@@ -46,6 +46,36 @@
           {% endfor %}
         </div>
       </section>
+      <section id="bannerSection">
+        <h2>Experts in organising trips for group travel</h2>
+      </section>
+      <section id="services">
+        <h2 class="styled-h2">Services</h2>
+        <div id="service-wrapper">
+          {% for service in indexData['services'] %}
+            <div class="service">
+              <h3>{{service['title']}}</h3>
+              <p>{{service['description']}}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </section>
+      <section>
+        <div class="embed-responsive embed-responsive-16by9 rounded m-auto bg-white">
+          <iframe class="embed-responsive-item border rounded" width="560" height="315" src="https://www.youtube.com/embed/kvW5iV7qp2w" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+        </div>
+      </section>
+      <section id="values">
+        <h2 class="styled-h2">Values</h2>
+        <div id="values-wrapper">
+          {% for value in indexData['values'] %}
+            <div class="value">
+              <h3>{{value['title']}}</h3>
+              <p>{{value['text']}}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </section>      
     </div>
   </span>
 {% endblock %}

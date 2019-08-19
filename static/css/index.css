@@ -1,3 +1,23 @@
+#bannerSection {
+  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/etours-davao-inc/image/upload/c_fill,e_art:ukulele,w_1439,ar_16:9,g_auto/v1549011328/etours-group-travel-davao-philippines.jpg');
+  ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 1280px;
+  margin: 15px auto;
+  border-radius: 4px;
+}
+
+#bannerSection h2 {
+  padding: 22% 0;
+  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  color: white;
+  font-size: 3em;
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;  
+}
+
 .styled-h2 {
     font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
     font-size: 1.5rem;
@@ -69,3 +89,61 @@
   .tp-pricestarts::before {
     content: "Php ";
   }
+
+  #service-wrapper, #values-wrapper {
+    display: block;
+  }
+
+  .service, .value {
+    padding: 1rem;
+    background-color: white;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+
+  .service h3, .value h3 {
+    font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    color: #3498db;
+    font-size: 1.1rem;
+  }
+
+  .service p, .value p {
+    color: #95a5a6;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 576px) { 
+    #bannerSection h2 {
+      font-size: 4em;
+    }
+  }
+
+  @media (min-width: 768px) {  
+    #bannerSection h2 {
+      font-size: 5em;
+    }
+    #service-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+  }
+
+  @media (min-width: 992px) { 
+    #bannerSection h2 {
+      font-size: 5em;
+    }
+
+    #service-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 10px;
+    }
+
+    #values-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px; 
+    }
+  } 
