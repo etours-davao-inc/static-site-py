@@ -1,0 +1,129 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #636e72;
+}
+
+.responsive-widths {
+  width:99%;
+  margin: 0 auto;
+}
+
+.tourpackage_thumbnail {
+  width: 75px;
+  height: 75px;
+}
+
+.tourpackage-name {
+  color: #cd6133
+}
+
+#hassle-free-banner {
+  background-color: #00a8ff;  
+}
+
+#hassle-free-banner > img {
+  padding: 3% 0px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-style: none;  
+}
+
+h1 {
+  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 1.8rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #e67e22;  
+}
+
+h3 {
+  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 2rem;
+  color: #e67e22;
+  margin: 0;  
+}
+
+#found {
+  width: 100%;
+  text-align: right;
+  color: #3498db;
+   font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;  
+}
+
+.duration {
+  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;  
+}
+
+.description {
+  color: gray;
+  font-size: 1rem;  
+}
+
+.footerwrapper {
+  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%; 
+}
+
+.footerwrapper > a {
+  display: block;
+}
+
+.pricewrapper {
+  line-height: 1.3rem;
+  transform: rotate(-3deg);
+}
+
+.price {
+  font-size: 1.3rem;
+  color: #2ecc71;
+  text-align: right;  
+}
+
+.price::before {
+  content: "Php ";
+}
+
+.pricestarts {
+  color: #c0392b;
+  font-size: .9rem;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {  
+  .responsive-widths  {
+    width:99%;
+    margin: 0 auto;
+  }
+  .tourpackage_thumbnail {
+    width: 125px;
+    height: 125px;
+  }
+
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .responsive-widths  {
+    width:65%;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  
+}
