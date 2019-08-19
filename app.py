@@ -14,9 +14,10 @@ tp = {}
 for tourpackage in tourpackages:
   tp[tourpackage['slug']] = tourpackage
 
+sortedTourpackages = sorted(tourpackages, key=lambda k: k['total_hours']) 
+
 @app.route('/')
 def index():
-  sortedTourpackages = sorted(tourpackages, key=lambda k: k['total_hours'])  
   return render_template('index.html', tourpackages=sortedTourpackages)
 
 @app.route('/philippine-tours-2019-2020/davao-tourpackages/<slug>')
@@ -24,6 +25,11 @@ def tourpackage_page(slug):
   tourpackage = tp[slug]
   today = datetime.now().strftime('%m/%d/%Y')
   return render_template('tourpackage.html', tourpackage=tourpackage, today=today)
+
+@app.route('/davao-tours-2019-2020')
+def tourpackages():
+  found = len(sortedTourpackages)
+  return render_template('tourpackages.html', tourpackages=sortedTourpackages, found=found)
 
 @app.errorhandler(404)
 def page_not_found(e):
