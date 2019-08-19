@@ -31,6 +31,11 @@ def tourpackages():
   found = len(sortedTourpackages)
   return render_template('tourpackages.html', tourpackages=sortedTourpackages, found=found)
 
+@app.route('/company-profile')
+def companyprofile():
+  return render_template('company-profile.html')
+
+
 @app.errorhandler(404)
 def page_not_found(e):
   return render_template('404.html') 
