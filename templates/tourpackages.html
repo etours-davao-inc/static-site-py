@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% block metadata %}
+  {{ super() }}
+  <title>Philippine Tour Packages | Davao Tours 2019-2020</title>
+  <meta name="description" content="Davao and Samal day tour activities and multiday tour packages" />
+{% endblock %}
 {% block stylesheets %}
   {{ super() }}
   <link rel="stylesheet" href="{{url_for('static', filename='css/tourpackages.css')}}" />

@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{% block metadata %}
+  {{ super() }}
+  <title>{{tourpackage.metatitle}}</title>
+  <meta name="description" content="{{tourpackage.metadescription}}" />
+  <meta name="keywords" content="{{tourpackage.metakeywords}}" />
+{% endblock %}
 {% block stylesheets %}
   {{ super() }}
   <link rel="stylesheet" href="{{url_for('static', filename='css/tourpackage.css')}}" />
