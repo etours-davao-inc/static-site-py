@@ -1,7 +1,9 @@
   <Html lang="en-US">
     <head>
+      {% block metadata %}
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+      {% endblock %}
       <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
       <meta name="theme-color" content="#000000" />
       {% block stylesheets %}
