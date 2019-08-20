@@ -23,26 +23,26 @@ sortedTourpackages = sorted(tourpackages, key=lambda k: k['total_hours'])
 def index():
   return render_template('index.html', tourpackages=sortedTourpackages, indexData=indexData)
 
-@app.route('/philippine-tours-2019-2020/davao-tourpackages/<slug>')
+@app.route('/philippine-tours-2019-2020/davao-tourpackages/<slug>.html')
 def tourpackage_page(slug):
   tourpackage = tp[slug]
   today = datetime.now().strftime('%m/%d/%Y')
   return render_template('tourpackage.html', tourpackage=tourpackage, today=today)
 
-@app.route('/davao-tours-2019-2020')
+@app.route('/davao-tours-2019-2020.html')
 def tourpackages():
   found = len(sortedTourpackages)
   return render_template('tourpackages.html', tourpackages=sortedTourpackages, found=found)
 
-@app.route('/company-profile')
+@app.route('/company-profile.html')
 def companyprofile():
   return render_template('company-profile.html')
 
-@app.route('/contact-us')
+@app.route('/contact-us.html')
 def contactus():
   return render_template('contact-us.html')
 
-@app.route('/privacy-policy')
+@app.route('/privacy-policy.html')
 def privacypolicy():
   return render_template('privacy-policy.html')  
 
