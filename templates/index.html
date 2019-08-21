@@ -16,24 +16,25 @@
         style="width:100%; height: auto" 
         autoplay
         playsinline
-        poster="https://res.cloudinary.com/etours-davao-inc/image/upload/v1564466982/etours-davao-kadayawan-banner-2019.jpg"
+        poster="https://res.cloudinary.com/etours-davao/image/upload/w_992,f_auto,q_auto:eco,dpr_auto/v1566365607/kadayawan-banner"
         >
-        <source src="https://res.cloudinary.com/etours-davao/video/upload/v1564969038/etours-davao-kadayawan-2019-c_scale_vc_auto_w_992_kly8v3.mp4" type="video/mp4" />
+        {# <source src="https://res.cloudinary.com/etours-davao/video/upload/v1564969038/etours-davao-kadayawan-2019-c_scale_vc_auto_w_992_kly8v3.mp4" type="video/mp4" /> #}
           Your browser does not support playing video content.
       </video>
-      <section>
+      <section class="w-100">
         <h2 class="styled-h2">Tour Packages</h2>
-        <div id="tourpackages-wrapper">
+        <div id="tourpackages-wrapper" class="w-100 m-auto">
           {% for tourpackage in tourpackages %}
             <div class="relative">
               <div class="d-block bg-white">
                 <div class="ribbon">
                   <span>{{tourpackage.duration_text}}</span>
                 </div>
-                <img 
-                  src="https://res.cloudinary.com/etours-davao/image/upload/w_488,q_auto:low,f_auto,dpr_auto/v1564818805/{{tourpackage.photo}}" 
+                <img
+                  src="https://res.cloudinary.com/etours-davao/image/upload/w_320,h_213,q_auto:low,f_auto,dpr_auto/v1566364219/placeholder.jpg"
+                  data-src="https://res.cloudinary.com/etours-davao/image/upload/w_320,q_auto:low,f_auto,dpr_auto/v1564818805/{{tourpackage.photo}}" 
                   alt="davao philippines"
-                  class="img-fluid" />
+                  class="img-fluid lazy" />
                 <div class="p-2 d-flex flex-wrap align-content-between" style="min-height: 115px">
                   <h3 class="tp-name">{{tourpackage.name}}</h3>
                   <div class="tp-pricewrapper">
@@ -65,11 +66,11 @@
           {% endfor %}
         </div>
       </section>
-      <section>
+      {# <section>
         <div class="embed-responsive embed-responsive-16by9 rounded m-auto bg-white">
           <iframe class="embed-responsive-item border rounded" width="560" height="315" src="https://www.youtube.com/embed/kvW5iV7qp2w" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
         </div>
-      </section>
+      </section> #}
       <section id="values">
         <h2 class="styled-h2">Values</h2>
         <div id="values-wrapper">
@@ -80,7 +81,10 @@
             </div>
           {% endfor %}
         </div>
-      </section>      
+      </section>
     </div>
   </span>
+{% endblock %}
+{% block script %}
+  <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
 {% endblock %}
