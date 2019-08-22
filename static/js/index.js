@@ -10,6 +10,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+  window.addEventListener('load', () => {
+    let videoBanner = document.getElementById("videoBanner");
+    let video = document.createElement("source");
+    video.src = "https://res.cloudinary.com/etours-davao/video/upload/v1564969038/etours-davao-kadayawan-2019-c_scale_vc_auto_w_992_kly8v3.mp4";
+    video.type = "video/mp4";
+    videoBanner.appendChild(video);
+  });
+
   function observeLazyImages(lazyImages) {
       let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
         entries.forEach(function(entry) {
