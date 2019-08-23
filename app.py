@@ -27,7 +27,7 @@ def index():
 def tourpackage_page(slug):
   tourpackage = tp[slug]
   today = datetime.now().strftime('%m/%d/%Y')
-  return render_template('tourpackage.html', tourpackage=tourpackage, today=today)
+  return render_template('tourpackage.html', tourpackage=tourpackage, today=today, data=json.dumps(tourpackage))
 
 @app.route('/davao-tours-2019-2020.html')
 def tourpackages():
