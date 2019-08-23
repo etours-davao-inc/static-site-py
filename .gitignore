@@ -7,3 +7,5 @@ __pycache__
 *.DS_Store
 static/css/fonts/
 build/
+static/js/bookingForm.js
+.gitignore
