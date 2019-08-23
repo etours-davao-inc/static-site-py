@@ -3,11 +3,15 @@ from flask import Flask, render_template
 import json
 from datetime import datetime
 from flask_static_compress import FlaskStaticCompress
+from flask_htmlmin import HTMLMIN
 
 import config
 
 app = Flask(__name__)
+app.config['MINIFY_PAGE'] = True
 compress = FlaskStaticCompress(app)
+
+htmlmin = HTMLMIN(app)
 
 with open(config.dataSource) as dataSource:
   tourpackages = json.load(dataSource)
