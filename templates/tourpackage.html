@@ -8,6 +8,7 @@
 {% block stylesheets %}
   {{ super() }}
   <link rel="stylesheet" href="{{url_for('static', filename='css/tourpackage.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static', filename='css/loader.css')}}" />
 {% endblock %}
 {% block container %}
   <div id="tourpackage-wrapper">
@@ -28,8 +29,26 @@
         {{tourpackage.responsibilites | safe }}
        </div>
      </div>
-    <div class="bg-white rounded">
+    <div id="bookingForm" class="rounded">
       <noscript>Your browser does not support JavaScript!</noscript>
+      <div class="rounded d-flex justify-content-center align-items-center bg-white" style="min-height: 200px"> 
+        <div class="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
   </div>
+{% endblock %}
+{% block script %}
+  {{ super() }}
+  <script type="text/javascript" src="{{url_for('static', filename='js/bookingForm.js')}}"></script>
+  <script>
+    const data = {{tourpackage | safe }}
+    document.addEventListener("DOMContentLoaded", function() {
+      bookingForm.mount(data)
+    });
+  </script>
 {% endblock %}
