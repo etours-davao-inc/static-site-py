@@ -5,8 +5,10 @@
   <meta name="description" content="{{indexData['header']['metaDescription']}}" />
 {% endblock %}
 {% block stylesheets %}
-  {{ super() }}
-  <link rel="stylesheet" href="{{url_for('static', filename='css/index.css')}}" />
+  {% compress 'css' %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}" />
+  {% endcompress %}
 {% endblock %}
 {% block container %}
   <span class="d-block mt-3">
@@ -86,5 +88,7 @@
   </span>
 {% endblock %}
 {% block script %}
+{% compress 'js' %}
   <script type="text/javascript" src="{{url_for('static', filename='js/index.js')}}"></script>
+{% endcompress %}
 {% endblock %}

@@ -5,8 +5,10 @@
   <meta name="description" content="Davao and Samal day tour activities and multiday tour packages" />
 {% endblock %}
 {% block stylesheets %}
-  {{ super() }}
-  <link rel="stylesheet" href="{{url_for('static', filename='css/tourpackages.css')}}" />
+  {% compress 'css' %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/tourpackages.css')}}" />
+  {% endcompress %}
 {% endblock %}
 {% block container %}
   <section id="hassle-free-banner">

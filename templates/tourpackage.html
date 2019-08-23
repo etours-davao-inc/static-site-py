@@ -6,9 +6,11 @@
   <meta name="keywords" content="{{tourpackage.metakeywords}}" />
 {% endblock %}
 {% block stylesheets %}
-  {{ super() }}
-  <link rel="stylesheet" href="{{url_for('static', filename='css/tourpackage.css')}}" />
-  <link rel="stylesheet" href="{{url_for('static', filename='css/loader.css')}}" />
+  {% compress 'css' %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/tourpackage.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/loader.css')}}" />
+  {% endcompress %}
 {% endblock %}
 {% block container %}
   <div id="tourpackage-wrapper">
