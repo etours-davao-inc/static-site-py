@@ -29,7 +29,11 @@
           {% for tourpackage in tourpackages %}
             <div class="relative">
               <div class="d-block bg-white">
-                <div class="ribbon">
+                {% if tourpackage.type == "multiday" %}
+                  <div class="ribbon purple-ribbon">
+                {% else %}
+                  <div class="ribbon">
+                {% endif %}
                   <span>{{tourpackage.duration_text}}</span>
                 </div>
                 <img
