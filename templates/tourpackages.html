@@ -3,6 +3,7 @@
   {{ super() }}
   <title>Philippine Tour Packages | Davao Tours 2019-2020</title>
   <meta name="description" content="Davao and Samal day tour activities and multiday tour packages" />
+  <meta name="keywords" content="davao tourpackages, davao tours, samal tourpackages, samal tours, philippines tours, philippine tourpackages" />
 {% endblock %}
 {% block stylesheets %}
   {% compress 'css' %}
@@ -12,18 +13,24 @@
 {% endblock %}
 {% block container %}
   <section id="hassle-free-banner">
-    <img src="https://res.cloudinary.com/etours-davao-inc/image/upload/w_600/v1489730145/etours-davao-philippines-hassle-free-travel_lqsg2k.png" />
+    <img
+      alt="Davao tourpackages hassle free travel"
+      src="https://res.cloudinary.com/etours-davao-inc/image/upload/w_600/v1489730145/etours-davao-philippines-hassle-free-travel_lqsg2k.png" />
   </section>
   <div class="responsive-widths">
-    <h1>Davao Tourpackages</h1>
-    <p>{{found}} tourpackages found</p>
+    <h1>Davao Tour Packages</h1>
+    <p>{{found}} tour packages found</p>
     {% for tourpackage in tourpackages %}
       <div class="tourpackage d-flex flex-row mb-1 p-2 rounded bg-white">
         <div class="p-2">
-          <img class="tourpackage_thumbnail rounded" crop="fill" src="https://res.cloudinary.com/etours-davao/image/upload/c_thumb,w_125,h_125,fl_progressive/v1564818805/{{tourpackage.photo}}" />
+          <img
+            alt="davao tours" 
+            class="tourpackage_thumbnail rounded" 
+            crop="fill" 
+            src="https://res.cloudinary.com/etours-davao/image/upload/c_thumb,w_125,h_125,q_auto,f_auto/v1564818805/{{tourpackage.photo}}" />
         </div>
         <div class="tourpackage_info_wrapper">
-          <h3>{{tourpackage.name}}</h3>
+          <h2>{{tourpackage.name}}</h2>
           <p class="duration">{{tourpackage.duration_text}}</p>
           <p class="description">{{tourpackage.description}}</p>
           <div class="footerwrapper">
