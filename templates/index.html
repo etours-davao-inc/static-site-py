@@ -3,6 +3,7 @@
   {{ super() }}
   <title>{{indexData['header']['title']}}</title>
   <meta name="description" content="{{indexData['header']['metaDescription']}}" />
+  <meta name="keywords" content="{{indexData['header']['metaKeywords']}}" />
 {% endblock %}
 {% block stylesheets %}
   {% compress 'css' %}
@@ -24,7 +25,8 @@
         Your browser does not support playing video content.
       </video>
       <section class="w-100">
-        <h2 class="styled-h2">Tour Packages</h2>
+        <h1 class="small m-0">Philippine Tourpackages</h1>
+        <h2 class="styled-h2 p-0">Davao Tourpackages</h2>
         <div id="tourpackages-wrapper" class="w-100 m-auto">
           {% for tourpackage in tourpackages %}
             <div class="relative">
