@@ -9,6 +9,7 @@ import config
 
 app = Flask(__name__)
 app.config['MINIFY_PAGE'] = True
+app.config['FREEZER_DEFAULT_MIMETYPE'] = 'text/html'
 compress = FlaskStaticCompress(app)
 
 htmlmin = HTMLMIN(app)
@@ -29,13 +30,13 @@ sortedTourpackages = sorted(tourpackages, key=lambda k: k['total_hours'])
 def index():
   return render_template('index.html', tourpackages=sortedTourpackages, indexData=indexData)
 
-@app.route('/philippine-tours-2019-2020/davao-tourpackages/<slug>.html')
+@app.route('/tourpackage/<slug>.html')
 def tourpackage_page(slug):
   tourpackage = tp[slug]
   today = datetime.now().strftime('%m/%d/%Y')
   return render_template('tourpackage.html', tourpackage=tourpackage, today=today, data=json.dumps(tourpackage))
 
-@app.route('/davao-tours-2019-2020.html')
+@app.route('/tourpackages.html')
 def tourpackages():
   found = len(sortedTourpackages)
   return render_template('tourpackages.html', tourpackages=sortedTourpackages, found=found)
@@ -52,8 +53,8 @@ def contactus():
 def privacypolicy():
   return render_template('privacy-policy.html')  
 
-@app.errorhandler(404)
-def page_not_found(e):
+@app.route('/404')
+def page_not_found():
   return render_template('404.html') 
 
 if __name__ == '__main__':
