@@ -51,7 +51,11 @@ def contactus():
 
 @app.route('/privacy-policy.html')
 def privacypolicy():
-  return render_template('privacy-policy.html')  
+  return render_template('privacy-policy.html')
+
+@app.route('/corporate-travel.html')
+def corporateTravel():
+  return render_template('corporate-travel.html')
 
 @app.route('/404')
 def page_not_found():
