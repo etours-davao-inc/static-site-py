@@ -50,7 +50,7 @@
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
   #tourpackage-wrapper {
-    max-width: 768px;
+
     margin: 0 auto;
   }
 }
@@ -59,11 +59,7 @@
 @media (min-width: 992px) { 
   #tourpackage-wrapper {
     margin: 15px auto;
-    max-width: 95%;
-    display: grid;
-    grid-template-columns: minmax(440px, 800px) minmax(320px, 350px);
-    grid-gap: 5px 5px;
-    justify-content: center;
+    width: 820px;
   }  
 }
  
