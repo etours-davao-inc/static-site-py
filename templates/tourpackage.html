@@ -9,6 +9,7 @@
   {% compress 'css' %}
     {{ super() }}
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/tourpackage.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/animate.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/loader.css')}}" />
   {% endcompress %}
 {% endblock %}
@@ -22,17 +23,9 @@
       <div id="tourpackage_info_wrapper">
         {{tourpackage.info | safe }}
       </div>
-      <h3 style="color: #d35400; font-size: 1em">Terms and conditions</h3>
-      <div id="tourpackage_info_wrapper">
-        {{tourpackage.terms | safe }}
-      </div>
-      <h3 style="color: #d35400; font-size: 1em">Responsibilities</h3>
-      <div id="tourpackage_info_wrapper">
-        {{tourpackage.responsibilites | safe }}
-      </div>
     </div>
 
-    <span id="bookingForm" class="rounded">
+    <span id="pricewidget" class="rounded">
       <noscript>Your browser does not support JavaScript!</noscript>
       <div class="rounded d-flex justify-content-center align-items-center bg-white" style="min-height: 200px"> 
         <div class="lds-ellipsis">
@@ -48,11 +41,11 @@
 {% endblock %}
 {% block script %}
   {{ super() }}
-  <script type="text/javascript" src="{{url_for('static', filename='js/bookingForm.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/pricewidget.js')}}"></script>
   <script>
     const data = {{data | safe }}
     document.addEventListener("DOMContentLoaded", function() {
-      bookingForm.mount(data)
+      pricewidget.mount(data)
     });
   </script>
 {% endblock %}
