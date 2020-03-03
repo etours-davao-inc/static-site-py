@@ -13,3 +13,4 @@ static/sdist
 bin/
 lib/
 pyvenv.cfg
+static/js/pricewidget.js
