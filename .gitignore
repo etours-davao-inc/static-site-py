@@ -10,3 +10,6 @@ build/
 static/js/bookingForm.js
 .gitignore
 static/sdist
+bin/
+lib/
+pyvenv.cfg
