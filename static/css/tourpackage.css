@@ -1,8 +1,10 @@
 #tourpackage-wrapper {
+  font-size: 15px;
   margin: 10px auto;
 }
 
 .tourpackage_info_wrapper {
+  font-size: 14px;
   background-color: white;
   border-radius: 4px;
   padding: 10px;
@@ -30,12 +32,13 @@
 }
 
 #tourpackage_info_wrapper  {
-  font-size: 1rem;
+  font-size: 16px;
+  line-height: 18px;
 }
 
 #tourpackage_info_wrapper h3 {
   color: #d35400;
-  font-size: 1em;
+  font-size: 17px;
 }
 
 #tourpackage_info_wrapper li {
