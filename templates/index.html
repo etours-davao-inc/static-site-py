@@ -12,14 +12,13 @@
   {% endcompress %}
 {% endblock %}
 {% block container %}
-  <span class="d-block mt-3">
+
     <div class="responsive-widths">
       <section class="w-100">
-        <h1 class="small m-0">Philippine Tourpackages</h1>
-        <h2 class="styled-h2 p-0">Davao Tourpackages</h2>
+        <h1 id="h1">Philippine Tourpackages > Davao Tourpackages</h1>
         <div id="tourpackages-wrapper" class="w-100 m-auto">
           {% for tourpackage in tourpackages %}
-            <div class="relative">
+            <div class="tourpackage">
               <div class="d-block bg-white">
                 {% if tourpackage.type == "multiday" %}
                   <div class="ribbon purple-ribbon">
@@ -29,19 +28,19 @@
                   <span>{{tourpackage.duration_text}}</span>
                 </div>
                 <img
-                  src="https://res.cloudinary.com/etours-davao/image/upload/w_320,h_213,q_auto:low,f_auto,dpr_auto/v1566364219/placeholder.jpg"
-                  data-src="https://res.cloudinary.com/etours-davao/image/upload/w_320,q_auto:low,f_auto,dpr_auto/v1564818805/{{tourpackage.photo}}" 
+                  src="https://res.cloudinary.com/etours-davao/image/upload/w_498,h_213,q_auto:low,f_auto,dpr_auto/v1566364219/placeholder.jpg"
+                  data-src="https://res.cloudinary.com/etours-davao/image/upload/w_498,q_auto:low,f_auto,dpr_auto/v1564818805/{{tourpackage.photo}}" 
                   alt="{{tourpackage.thumbnail.alt}}"
                   class="img-fluid lazy" />
                 <div class="p-2 d-flex flex-wrap align-content-between" style="min-height: 115px">
-                  <h3 class="tp-name">{{tourpackage.name}}</h3>
+                  <h2 class="tp-name">{{tourpackage.name}}</h2>
                   <div class="tp-pricewrapper">
                     <div>
                       <p class="p-0 m-0"><small>Price starts from</small></p>
                       <span class="tp-pricestarts">{{tourpackage.price_starts}}</span>
                     </div>
                     <div>
-                      <a href="{{url_for('tourpackage_page', slug=tourpackage.slug)}}" class="btn btn-info align-right btn-sm">View details</a>
+                      <a href="{{url_for('tourpackage_page', slug=tourpackage.slug)}}" class="btn btn-success align-right btn-sm">View details</a>
                     </div>
                   </div>
                 </div>  
@@ -53,16 +52,6 @@
       <section id="bannerSection">
         <h2>Experts in organising trips for group travel</h2>
       </section>
-      <video
-        id="videoBanner"
-        loop="loop" 
-        style="width:100%; height: auto" 
-        autoplay
-        playsinline
-        poster="https://res.cloudinary.com/etours-davao/image/upload/w_992,f_auto,q_auto:eco,dpr_auto/v1566365607/kadayawan-banner"
-        >
-        Your browser does not support playing video content.
-      </video>
       <section id="services">
         <h2 class="styled-h2">Services</h2>
         <div id="service-wrapper">
@@ -91,7 +80,7 @@
         </div>
       </section>
     </div>
-  </span>
+
 {% endblock %}
 {% block script %}
 {% compress 'js' %}

@@ -20,12 +20,13 @@
   <div class="responsive-widths">
     <h1 class="mt-2 mb-0 p-0">Davao Tourpackages</h1>
     <p>{{found}} tour packages found</p>
+    <div id="tourpackages">
     {% for tourpackage in tourpackages %}
-      <div class="tourpackage d-flex flex-row mb-1 p-2 rounded bg-white">
+      <div class="tourpackage d-flex flex-row">
         <div class="p-2">
           <img
             alt="{{tourpackage.thumbnail.alt}}" 
-            class="tourpackage_thumbnail rounded" 
+            class="tourpackage_thumbnail" 
             crop="fill" 
             src="https://res.cloudinary.com/etours-davao/image/upload/c_thumb,w_125,h_125,q_auto,f_auto/v1564818805/{{tourpackage.thumbnail.photo}}" />
         </div>
@@ -43,5 +44,6 @@
         </div>
       </div>    
     {% endfor %}
+    </div>
   </div>
 {% endblock %}

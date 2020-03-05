@@ -6,204 +6,209 @@
 }
 
 .visibleBG {
-  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/etours-davao/image/upload/w_992,c_fill,ar_16:9,q_auto:eco,f_auto,g_auto/v1566366630/etours-davao-philippines-group-travel');
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/etours-davao/image/upload/w_992,c_fill,ar_16:9,q_auto:eco,f_auto,g_auto/v1566366630/etours-davao-philippines-group-travel');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #bannerSection h2 {
   padding: 22% 0;
-  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   color: white;
   font-size: 3em;
   width: 75%;
   text-align: center;
-  margin: 0 auto;  
+  margin: 0 auto;
 }
 
-.styled-h2 {
-    font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-    font-size: 1.5rem;
-    padding: .5rem;
-    color: #e67e22;
-  }
+#h1, .styled-h2 {
+  font-size: 22px;
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  padding: 15px 0;
+}
 
-  #tourpackages-wrapper {
+#tourpackages-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-gap: 25px;
+  justify-content: center;
+}
+
+.tourpackage {
+  position: relative;
+  border: 1px solid silver;
+  border-radius: 2px;
+}
+
+.tourpackage img {
+  width: 100%;
+}
+
+.ribbon {
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.ribbon::before, .ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+
+.ribbon>span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: orange;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+  text-align: center;
+  right: -25px;
+  top: 30px;
+  transform: rotate(-45deg);
+}
+
+.purple-ribbon>span {
+  background-color: purple;
+}
+
+.tp-name {
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+  color: #2f3542;
+}
+
+.tp-pricewrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 1.1rem;
+}
+
+.tp-pricestarts {
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 1.1rem;
+  color: #2ecc71;
+}
+
+.tp-pricestarts::before {
+  content: "Php ";
+}
+
+#service-wrapper, #values-wrapper {
+  display: block;
+}
+
+.service, .value {
+  padding: 1rem;
+  background-color: white;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.service h3, .value h3 {
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  color: #3498db;
+  font-size: 1.1rem;
+}
+
+.service p, .value p {
+  color: #95a5a6;
+  font-size: 1rem;
+}
+
+.youtube {
+  background-color: #000;
+  margin-bottom: 30px;
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.youtube img {
+  width: 100%;
+  top: -16.84%;
+  left: 0;
+  opacity: 0.7;
+}
+
+.youtube .play-button {
+  width: 90px;
+  height: 60px;
+  background-color: #333;
+  box-shadow: 0 0 30px rgba( 0, 0, 0, 0.6);
+  z-index: 1;
+  opacity: 0.8;
+  border-radius: 6px;
+}
+
+.youtube .play-button:before {
+  content: "";
+  border-style: solid;
+  border-width: 15px 0 15px 26.0px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.youtube img, .youtube .play-button {
+  cursor: pointer;
+}
+
+.youtube img, .youtube iframe, .youtube .play-button, .youtube .play-button:before {
+  position: absolute;
+}
+
+.youtube .play-button, .youtube .play-button:before {
+  top: 50%;
+  left: 50%;
+  transform: translate3d( -50%, -50%, 0);
+}
+
+.youtube iframe {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+@media (min-width: 576px) {
+  #bannerSection h2 {
+    font-size: 4em;
+  }
+}
+
+@media (min-width: 768px) {
+  #bannerSection h2 {
+    font-size: 5em;
+  }
+  #service-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 320px);
-    grid-gap: 6px;
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
   }
+}
 
-  .relative {
-    position: relative;
+@media (min-width: 992px) {
+  #bannerSection h2 {
+    font-size: 5em;
   }
-
-  .ribbon {
-    width: 130px;
-    height: 130px;
-    overflow: hidden;
-    position: absolute;
+  #service-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
   }
-
-  .ribbon::before, .ribbon::after {
-    position: absolute;
-    z-index: -1;
-    content: '';
-    display: block;
-    border: 5px solid #2980b9;  
+  #values-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
   }
-
-  .ribbon > span {
-    position: absolute;
-    display: block;
-    width: 225px;
-    padding: 15px 0;
-    background-color: orange;
-    box-shadow: 0 5px 10px rgba(0,0,0,.1);
-    color: #fff;
-    font: 700 18px/1 'Lato', sans-serif;
-    text-shadow: 0 1px 1px rgba(0,0,0,.2);
-    text-align: center;  
-    right: -25px;
-    top: 30px;
-    transform: rotate(-45deg);
-  }
-
-  .purple-ribbon > span {
-    background-color: purple;
-  }
-  
-  .tp-name {
-    color: #ff9f43;
-    font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-    font-size: .95rem;  
-  }
-
-  .tp-pricewrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    line-height: 1.1rem; 
-  }
-
-  .tp-pricestarts {
-    font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-    font-size: 1.1rem;
-    color: #2ecc71;
-  }
-
-  .tp-pricestarts::before {
-    content: "Php ";
-  }
-
-  #service-wrapper, #values-wrapper {
-    display: block;
-  }
-
-  .service, .value {
-    padding: 1rem;
-    background-color: white;
-    border-radius: 2px;
-    margin-bottom: 10px;
-  }
-
-  .service h3, .value h3 {
-    font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-    text-align: center;
-    color: #3498db;
-    font-size: 1.1rem;
-  }
-
-  .service p, .value p {
-    color: #95a5a6;
-    font-size: 1rem;
-  }
-
-  .youtube {
-      background-color: #000;
-      margin-bottom: 30px;
-      position: relative;
-      padding-top: 56.25%;
-      overflow: hidden;
-      cursor: pointer;
-  }
-  .youtube img {
-      width: 100%;
-      top: -16.84%;
-      left: 0;
-      opacity: 0.7;
-  }
-  .youtube .play-button {
-      width: 90px;
-      height: 60px;
-      background-color: #333;
-      box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
-      z-index: 1;
-      opacity: 0.8;
-      border-radius: 6px;
-  }
-  .youtube .play-button:before {
-      content: "";
-      border-style: solid;
-      border-width: 15px 0 15px 26.0px;
-      border-color: transparent transparent transparent #fff;
-  }
-  .youtube img,
-  .youtube .play-button {
-      cursor: pointer;
-  }
-  .youtube img,
-  .youtube iframe,
-  .youtube .play-button,
-  .youtube .play-button:before {
-      position: absolute;
-  }
-  .youtube .play-button,
-  .youtube .play-button:before {
-      top: 50%;
-      left: 50%;
-      transform: translate3d( -50%, -50%, 0 );
-  }
-  .youtube iframe {
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-  }
-
-  @media (min-width: 576px) { 
-    #bannerSection h2 {
-      font-size: 4em;
-    }
-  }
-
-  @media (min-width: 768px) {  
-    #bannerSection h2 {
-      font-size: 5em;
-    }
-    #service-wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-gap: 10px;
-    }
-  }
-
-  @media (min-width: 992px) { 
-    #bannerSection h2 {
-      font-size: 5em;
-    }
-
-    #service-wrapper {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 10px;
-    }
-
-    #values-wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 10px; 
-    }
-  } 
+}

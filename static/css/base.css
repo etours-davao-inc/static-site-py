@@ -15,7 +15,6 @@
 
   body {
     font-family: 'Gotham Rounded Book', Arial, Helvetica, sans-serif;
-    background-color:#F5D76E; 
     color: #484848;
   }
 
@@ -24,11 +23,34 @@
   }
 
   #root {
-    width: 100%;
+    margin: 0 auto;
+    max-width: 1100px;
     min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 100%;
+  }
+
+  nav { 
+    font-size: 14px;
+    background-color: white;
+    margin: 15px 0;
+    border-bottom: 1px solid silver;
+  }
+
+  .navs {
+    border-top: 1px solid silver;
+  }
+  nav a:link {
+    margin-right: 10px;
+    padding: 8px;
+    color: #484848;
+  }
+
+  nav a:visited{
+    color: #484848;
+  }
+
+  nav a:hover {
+    background-color: antiquewhite;
+    text-decoration: none;
   }
 
   .responsive-widths {
@@ -96,8 +118,11 @@
     font-size: 1.4rem;
     color: gray;
     padding: 1rem;
-  }  
+  }
+
   .footer-basic {
+    border-top: 1px solid silver;
+    font-size: 14px;
     font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
     padding:40px 0;
     background-color:#ffffff;
@@ -108,7 +133,6 @@
     padding:0;
     list-style:none;
     text-align:center;
-    font-size:18px;
     line-height:1.6;
     margin-bottom:0;
   }
@@ -167,10 +191,7 @@
  
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-  .responsive-widths {
-    min-width:768px;
-    max-width: 992px;
-  }
+
 }
  
 /* Extra large devices (large desktops, 1200px and up) */

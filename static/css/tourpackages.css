@@ -1,12 +1,30 @@
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #636e72;
-}
-
 .responsive-widths {
   width:99%;
   margin: 0 auto;
+}
+
+#tourpackages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tourpackage {
+  border: 1px solid silver;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  max-width: 800px;
+}
+
+.duration {
+  font-size: 14px;
+  margin-bottom: 1rem;  
+}
+
+.description {
+  color: gray;
+  font-size: 15px;  
 }
 
 .tourpackage_thumbnail {
@@ -14,8 +32,14 @@ body {
   height: 75px;
 }
 
+.tourpackage_info_wrapper {
+  padding: 10px;
+}
+
 .tourpackage-name {
-  color: #cd6133
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+  color: #2f3542;
 }
 
 #hassle-free-banner {
@@ -33,18 +57,15 @@ body {
 }
 
 h1 {
-  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-  font-size: 1.8rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  color: #e67e22;  
+  font-size: 22px;
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  padding: 15px 0;
 }
 
 h2 {
-  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-  font-size: 2rem;
-  color: #e67e22;
-  margin: 0;  
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+  color: #2f3542; 
 }
 
 #found {
@@ -54,16 +75,6 @@ h2 {
    font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;  
 }
 
-.duration {
-  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;  
-}
-
-.description {
-  color: gray;
-  font-size: 1rem;  
-}
 
 .footerwrapper {
   font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
@@ -120,7 +131,7 @@ h2 {
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
   .responsive-widths  {
-    width:65%;
+
   }
 }
 
