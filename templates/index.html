@@ -33,11 +33,14 @@
                   alt="{{tourpackage.thumbnail.alt}}"
                   class="img-fluid lazy" />
                 <div class="p-2 d-flex flex-wrap align-content-between" style="min-height: 115px">
-                  <h2 class="tp-name">{{tourpackage.name}}</h2>
+                  <div>
+                    <h2 class="tp-name">{{tourpackage.name}}</h2>
+                    <p>
+                  </div>
                   <div class="tp-pricewrapper">
                     <div>
                       <p class="p-0 m-0"><small>Price starts from</small></p>
-                      <span class="tp-pricestarts">{{tourpackage.price_starts}}</span>
+                      <span class="tp-pricestarts">{{'%.2f'|format(tourpackage.price_starts | float)}}</span>
                     </div>
                     <div>
                       <a href="{{url_for('tourpackage_page', slug=tourpackage.slug)}}" class="btn btn-outline-success align-right btn-sm">View details</a>
