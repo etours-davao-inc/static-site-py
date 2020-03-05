@@ -9,6 +9,9 @@ import config
 
 app = Flask(__name__)
 app.config['MINIFY_PAGE'] = True
+app.config['TESTING'] = True
+app.config['DEBUG'] = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['FREEZER_DEFAULT_MIMETYPE'] = 'text/html'
 compress = FlaskStaticCompress(app)
 
