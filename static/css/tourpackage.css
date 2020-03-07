@@ -8,6 +8,13 @@
   background-color: white;
   border-radius: 4px;
   padding: 10px;
+  animation-name: tourpackage;
+  animation-duration: 2s;
+}
+
+@keyframes tourpackage {
+  0% {opacity: 0;}
+  100% {opacity: 100%;}
 }
 
 #tourpackage_banner {

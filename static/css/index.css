@@ -38,10 +38,24 @@
   position: relative;
   border: 1px solid silver;
   border-radius: 2px;
+  animation-name: tourpackage;
+  animation-duration: 1s;
+}
+
+@keyframes tourpackage {
+  0% {opacity: 0;}
+  100% {opacity: 100%;}
 }
 
 .tourpackage img {
   width: 100%;
+  animation-name: tp-image;
+  animation-duration: 1s;
+}
+
+@keyframes tp-image {
+  0% {opacity: 0;}
+  100% {opacity: 100%;}
 }
 
 .ribbon {
