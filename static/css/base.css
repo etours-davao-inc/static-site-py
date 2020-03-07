@@ -31,9 +31,12 @@
   nav { 
     width: 100%;
     font-size: 14px;
+    padding-top: 10px;
     background-color: white;
-    margin: 15px 0;
     border-bottom: 1px solid silver;
+    position: fixed;
+    top: 0;
+    z-index:9999;
   }
 
   #logo-block {
@@ -51,7 +54,7 @@
   #toggler {
     position: absolute;
     z-index: 2;
-    opacity: 0;;
+    opacity: 0;
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -100,20 +103,23 @@
   }
 
   .navs {
-    z-index:99;
+    display: none;
+  }
+
+  .mobile-navs {
     visibility: hidden;
     position: absolute;
     background-color: white;
     width: 100%;
-    opacity: 0;
+    z-index: 9999;
   }
 
-  #toggler:checked ~ .navs {
-    background-color: blanchedalmond;
+  #toggler:checked ~ .mobile-navs {
+    border-top: 1px solid silver;
     visibility: visible;
-    display: block;
-    opacity: 100%;
     transition: opacity 0.4s ease;
+    border-bottom: 1px solid silver;
+    height: 100vh;
   }
 
   nav a:link {
@@ -222,6 +228,10 @@
 @media (min-width: 992px) { 
   nav {
     position: relative;
+  }
+
+  .mobile-navs {
+    display: none;
   }
 
   .navs {
