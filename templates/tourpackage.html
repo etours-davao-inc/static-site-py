@@ -2,49 +2,94 @@
 {% block metadata %}
   {{ super() }}
   <title>{{tourpackage.metatitle}}</title>
-  <meta name="description" content="{{tourpackage.metadescription}}" />
-  <meta name="keywords" content="{{tourpackage.metakeywords}}" />
+  <meta name="description" content="{{tourpackage.metadescription}}"/>
+  <meta name="keywords" content="{{tourpackage.metakeywords}}"/>
 {% endblock %}
 {% block stylesheets %}
   {% compress 'css' %}
-    {{ super() }}
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/tourpackage.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/animate.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/loader.css')}}" />
+  {{ super() }}
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/tourpackage.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/animate.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/loader.css')}}"/>
   {% endcompress %}
 {% endblock %}
 {% block container %}
-  <div id="tourpackage-wrapper">
-    <div class="tourpackage_info_wrapper">
+  <main>
+    <header class="tourpackage_header">
       <h1 id="tourpackage_title" class="m-0 pb-0">{{tourpackage.name}}</h1>
-      <span><small>Last Updated: {{today}}</small></span>
-      <p id="tourpackage_code_duration" class="mt-3">{{tourpackage.duration_text}}</p>
-      <p id="tourpackage_description">{{tourpackage.description}}</p>
-      <div id="tourpackage_info_wrapper">
-        {{tourpackage.info | safe }}
-      </div>
-    </div>
-
-    <span id="pricewidget" class="rounded">
-      <noscript>Your browser does not support JavaScript!</noscript>
-      <div class="rounded d-flex justify-content-center align-items-center bg-white" style="min-height: 200px"> 
-        <div class="lds-ellipsis">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+      <summary>
+        <table>
+          <tbody>
+            <tr>
+              <td>Type</td>
+              <td>{{tourpackage.type | title}}</td>
+            </tr>
+            <tr>
+              <td>Code</td>
+              <td>{{tourpackage.code| upper }}</td>
+            </tr>
+            <tr>
+              <td>Duration</td>
+              <td>{{tourpackage.duration_text}}</td>
+            </tr>
+            <tr>
+              <td>Last Updated</td>
+              <td>{{today}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p id="tourpackage_description">{{tourpackage.description}}</p>
+      </summary>
+    </header>
+    <aside>
+      <section>
+        <p>On this page</p>
+        <ul>
+          <li>
+            <a href="#tourpackage_info_wrapper" title="Read tourpackage info">Tour info</a>
+          </li>
+          <li>
+            <a href="#pricewidget" title="View tourpackage price">Tour price</a>
+          </li>
+        </ul>
+      </section>
+      <section class="contact">
+        <p>Contact us</p>
+        <div>
+          <p>
+            <a href="tel:+639778344716">+63 977 834 4716 <span>(Globe)</span></a>
+          </p>
+          <p>
+            <a href="mailto:info@etours.ph">info@etours.ph</a>
+          </p>
         </div>
-      </div>
-    </span>
-  </div>
-  <div id="modal"></div>
+      </section>
+    </aside>
+    <section id="tourpackage-wrapper">
+      <article id="tourpackage_info_wrapper">
+        {{tourpackage.info | safe }}
+      </article>
+
+      <span id="pricewidget" class="rounded">
+        <noscript>Your browser does not support JavaScript!</noscript>
+        <div class="rounded d-flex justify-content-center align-items-center bg-white" style="min-height: 200px">
+          <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </span>
+    </section>
+  </main>
 {% endblock %}
 {% block script %}
   {{ super() }}
   <script type="text/javascript" src="{{url_for('static', filename='js/pricewidget.js')}}"></script>
   <script>
     const data = {{data | safe }}
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       pricewidget.mount(data)
     });
   </script>

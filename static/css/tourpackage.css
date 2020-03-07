@@ -1,31 +1,89 @@
-#tourpackage-wrapper {
-  font-size: 15px;
-  margin: 10px auto;
-}
-
-.tourpackage_info_wrapper {
-  font-size: 14px;
-  background-color: white;
-  border-radius: 4px;
-  padding: 10px;
+main {
+  padding: 12px;
   animation-name: tourpackage;
   animation-duration: 2s;
 }
 
 @keyframes tourpackage {
-  0% {opacity: 0;}
-  100% {opacity: 100%;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+#tourpackage-wrapper {
+  font-size: 15px;
+  margin: 10px auto;
+}
+
+.tourpackage_header {
+  padding: 0;
+}
+
+summary table {
+  margin-top: 5px;
+  width: 50%;
+  font-size: 13px;
+}
+
+summary table td:nth-child(1) {
+  width: 120px;
+}
+summary table td:nth-child(1)::after{
+  content: ":";
+}
+
+summary table td:nth-child(2){
+  font-weight: 700;
+}
+
+aside p {
+  color: #D35401;
+  font-size: 17px;
+  padding: 0;
+  margin: 0;
+}
+
+aside ul {
+  font-size: 14px;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 5px;
+}
+
+.contact > div {
+  padding: 5px;
+}
+
+.contact > div > p {
+  font-size: 14px;
+  padding: 5px 0;
+  color: #484848
+}
+
+.contact > div > p > a > span {
+  font-size: 10px;
+}
+
+.tourpackage_info_wrapper {
+  font-size: 14px;
+  line-height: 18px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 10px;
 }
 
 #tourpackage_banner {
-  width:100%;
+  width: 100%;
   border-radius: 3px;
 }
 
 #tourpackage_title {
-  font-family: 'Gotham Bold',Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+  font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
   color: #D35400;
-  font-size: 2rem;
+  font-size: 1.4rem;
   padding: 1rem 0;
 }
 
@@ -36,11 +94,8 @@
 #tourpackage_description {
   font-size: 1rem;
   padding: 1rem 0;
-}
-
-#tourpackage_info_wrapper  {
-  font-size: 16px;
-  line-height: 18px;
+  font-weight: 700;
+  margin: 0;
 }
 
 #tourpackage_info_wrapper h3 {
@@ -52,27 +107,46 @@
   margin-bottom: .2em;
 }
 
-
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) { 
-}
- 
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {  
-  #tourpackage-wrapper {
 
+@media (min-width: 576px) {}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+
+@media (min-width: 768px) {
+  #tourpackage-wrapper {
     margin: 0 auto;
   }
 }
- 
+
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-  #tourpackage-wrapper {
+
+@media (min-width: 992px) {
+  header {
+    grid-area: header;
+  }
+  aside {
+    font-weight: 800;
+    margin-top: 15px;
+    border-right: 1px solid silver;
+    grid-area: aside;
+  }
+  section#tourpackage-wrapper {
+    grid-area: info
+  }
+  main {
+    width: 960px;
+    grid-gap: 15px;
+    display: grid;
+    grid-template-columns: 20% 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "aside header header" 
+      "aside info info";
     margin: 15px auto;
-    width: 820px;
-  }  
+  }
 }
- 
+
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  
-}
+
+@media (min-width: 1200px) {}
