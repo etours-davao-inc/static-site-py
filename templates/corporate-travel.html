@@ -6,7 +6,9 @@
   <meta name="keywords" content="davao travel, davao tours, davao corporate travel"/>
 {% endblock %}
 {% block stylesheets %}
+  {% compress 'css' %}
   {{ super() }}
+  {% endcompress %}
 
 {% endblock %}
 {% block container %}
