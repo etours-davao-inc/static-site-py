@@ -1,3 +1,7 @@
+main {
+  padding: 10px
+}
+
 #bannerSection {
   background-color: silver;
   max-width: 1280px;
@@ -117,6 +121,10 @@
   content: "Php ";
 }
 
+#services, #values {
+  padding: 10px
+}
+
 #service-wrapper, #values-wrapper {
   display: block;
 }
@@ -124,20 +132,20 @@
 .service, .value {
   padding: 1rem;
   background-color: white;
-  border-radius: 2px;
+  border-radius: 4px;
   margin-bottom: 10px;
+  border: 1px solid silver;
 }
 
 .service h3, .value h3 {
   font-family: 'Gotham Bold', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-  text-align: center;
   color: #3498db;
   font-size: 1.1rem;
 }
 
 .service p, .value p {
-  color: #95a5a6;
   font-size: 1rem;
+  width: 100%;
 }
 
 .youtube {
@@ -204,11 +212,6 @@
   #bannerSection h2 {
     font-size: 5em;
   }
-  #service-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
-  }
 }
 
 @media (min-width: 992px) {
@@ -216,13 +219,15 @@
     font-size: 5em;
   }
   #service-wrapper {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+
   }
   #values-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+  }
+  .service p, .value p {
+    font-size: 1rem;
+    width: 80%;
   }
 }
