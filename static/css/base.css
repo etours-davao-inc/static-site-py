@@ -45,8 +45,6 @@
 
   #menu-wrap {
     position: absolute;
-    top: 15;
-    left: 0;
     width: 100%;
   }
 
@@ -96,6 +94,7 @@
   }
 
   #navlink {
+    z-index: 3;
     display: block;
     margin: 0 auto;
   }
