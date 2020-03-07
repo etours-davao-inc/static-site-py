@@ -44,7 +44,11 @@
                         <span class="tp-pricestarts">{{'%.2f'|format(tourpackage.price_starts | float)}}</span>
                       </div>
                       <div>
-                        <a href="{{url_for('tourpackage_page', slug=tourpackage.slug)}}" class="btn btn-outline-success align-right btn-sm">View details</a>
+                        <a 
+                          title="link to {{tourpackage.name | lower}} page"
+                          href="{{url_for('tourpackage_page', slug=tourpackage.slug)}}" 
+                          class="btn btn-outline-success align-right btn-sm"
+                        >View details</a>
                       </div>
                     </div>
                   </div>
