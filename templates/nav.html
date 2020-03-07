@@ -1,10 +1,26 @@
-<nav class="shadow" tabindex="-1">
-  <div class="d-flex justify-content-center w-100">
-    <a href="/" class="center-block" tabindex="-1">
-      <img id="etours-logo" class="center-block" src="https://res.cloudinary.com/etours-davao-inc/image/upload/c_scale,w_125/v1478855681/EtoursLogo_t2euyl.png"/>
+<nav tabindex="-1">
+  <div id="logo-block">
+    <div id="menu-wrap">
+      <input type="checkbox" id="toggler"/>
+      <div id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="navs">
+        <a href="/">Home</a>
+        <a href="{{url_for('tourpackages')}}">Tourpackages</a>
+        <a href="{{url_for('corporateTravel')}}">Corporate Travel</a>
+        <a href="{{url_for('companyprofile')}}">Company Profile</a>
+        <a href="{{url_for('privacypolicy')}}">Privacy Policy</a>
+        <a href="{{url_for('contactus')}}">Contact Us</a>
+      </div>
+    </div>
+    <a id="navlink" href="/" tabindex="-1">
+      <img id="etours-logo" src="https://res.cloudinary.com/etours-davao-inc/image/upload/c_scale,w_125/v1478855681/EtoursLogo_t2euyl.png"/>
     </a>
   </div>
-  <div class="navs d-flex justify-content-center">
+  <div class="navs">
     <a href="/">Home</a>
     <a href="{{url_for('tourpackages')}}">Tourpackages</a>
     <a href="{{url_for('corporateTravel')}}">Corporate Travel</a>
